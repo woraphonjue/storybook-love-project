@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="refresh" content="0; url=/storybook-love-project/" />
+    <title>Redirecting…</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        display: grid;
+        place-items: center;
+        min-height: 100vh;
+        color: #5c3b40;
+        background: #f5eee7;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Redirecting…</p>
+    <script>
+      const path = '/storybook-love-project/';
+      const search = window.location.search || '';
+      const hash = window.location.hash || '';
+      window.location.replace(`${path}${search}${hash}`);
+    </script>
+  </body>
+</html>
+
