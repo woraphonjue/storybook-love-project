@@ -13,6 +13,10 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        sarabun: ['Sarabun', 'sans-serif'],
+        handwritten: ['Caveat', 'cursive'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -57,6 +61,17 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        // Custom romantic colors
+        cream: "hsl(var(--cream))",
+        "soft-pink": "hsl(var(--soft-pink))",
+        lavender: "hsl(var(--lavender))",
+        "warm-beige": "hsl(var(--warm-beige))",
+        rose: "hsl(var(--rose))",
+        "rose-glow": "hsl(var(--rose-glow))",
+        "book-brown": "hsl(var(--book-brown))",
+        "book-spine": "hsl(var(--book-spine))",
+        "page-cream": "hsl(var(--page-cream))",
+        "page-shadow": "hsl(var(--page-shadow))",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -65,25 +80,23 @@ export default {
       },
       keyframes: {
         "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+      },
+      boxShadow: {
+        'book': '0 10px 40px -10px hsl(var(--book-brown) / 0.4), 0 20px 60px -20px hsl(var(--rose) / 0.2)',
+        'book-hover': '0 15px 50px -10px hsl(var(--book-brown) / 0.5), 0 25px 70px -20px hsl(var(--rose) / 0.3)',
+        'page': '0 2px 10px hsl(var(--page-shadow) / 0.3)',
+        'photo': '0 4px 15px hsl(0 0% 0% / 0.15)',
       },
     },
   },
