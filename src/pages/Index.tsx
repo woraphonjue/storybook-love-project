@@ -1,13 +1,48 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from 'react';
+import FloatingHearts from '@/components/FloatingHearts';
+import Sparkles from '@/components/Sparkles';
+import ClosedBook from '@/components/ClosedBook';
+import PhotoAlbum from '@/components/PhotoAlbum';
 
 const Index = () => {
+  const [isBookOpen, setIsBookOpen] = useState(false);
+  const [showContent, setShowContent] = useState(false);
+
+  const handleOpenBook = () => {
+    setIsBookOpen(true);
+    // Delay showing album content for smooth transition
+    setTimeout(() => {
+      setShowContent(true);
+    }, 300);
+  };
+
+  const handleRestart = () => {
+    setShowContent(false);
+    setIsBookOpen(false);
+  };
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+    <main className="min-h-screen bg-romantic-gradient relative overflow-hidden">
+      {/* Background Effects */}
+      <FloatingHearts />
+      <Sparkles />
+
+      {/* Main Content */}
+      <div className="relative z-10">
+        {!isBookOpen ? (
+          <ClosedBook onOpen={handleOpenBook} />
+        ) : showContent ? (
+          <div className="animate-fade-slide-up">
+            <PhotoAlbum onRestart={handleRestart} />
+          </div>
+        ) : (
+          // Loading transition
+          <div className="min-h-screen flex items-center justify-center">
+            <div className="text-4xl animate-gentle-bounce">💕</div>
+          </div>
+        )}
       </div>
-    </div>
+    </main>
   );
 };
 
