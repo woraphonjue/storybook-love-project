@@ -25,8 +25,10 @@ const albumPages: AlbumPage[] = [
     type: 'memory',
     title: 'Memory',
     photos: [
-      { id: 1, placeholder: 'รูปที่ 1', caption: 'แคปชันที่ 1', rotation: -3 },
-      { id: 2, placeholder: 'รูปที่ 2', caption: 'แคปชันที่ 2', rotation: 2 },
+      { id: 1, placeholder: 'รูปที่ 1', caption: '', rotation: -3 },
+      { id: 2, placeholder: 'รูปที่ 2', caption: '', rotation: 2 },
+      { id: 3, placeholder: 'รูปที่ 3', caption: '', rotation: 1 },
+      { id: 4, placeholder: 'รูปที่ 4', caption: '', rotation: -2 },
     ],
   },
   {
@@ -34,8 +36,10 @@ const albumPages: AlbumPage[] = [
     type: 'memory',
     title: 'Memory',
     photos: [
-      { id: 3, placeholder: 'รูปที่ 3', caption: 'แคปชันที่ 3', rotation: 1 },
-      { id: 4, placeholder: 'รูปที่ 4', caption: 'แคปชันที่ 4', rotation: -2 },
+      { id: 5, placeholder: 'รูปที่ 5', caption: '', rotation: 2 },
+      { id: 6, placeholder: 'รูปที่ 6', caption: '', rotation: -1 },
+      { id: 7, placeholder: 'รูปที่ 7', caption: '', rotation: -3 },
+      { id: 8, placeholder: 'รูปที่ 8', caption: '', rotation: 1 },
     ],
   },
   {
@@ -43,8 +47,10 @@ const albumPages: AlbumPage[] = [
     type: 'memory',
     title: 'Memory',
     photos: [
-      { id: 5, placeholder: 'รูปที่ 5', caption: 'แคปชันที่ 5', rotation: 2 },
-      { id: 6, placeholder: 'รูปที่ 6', caption: 'แคปชันที่ 6', rotation: -1 },
+      { id: 9, placeholder: 'รูปที่ 9', caption: '', rotation: 1 },
+      { id: 10, placeholder: 'รูปที่ 10', caption: '', rotation: -2 },
+      { id: 11, placeholder: 'รูปที่ 11', caption: '', rotation: 2 },
+      { id: 12, placeholder: 'รูปที่ 12', caption: '', rotation: -1 },
     ],
   },
   {
@@ -132,50 +138,42 @@ const PhotoAlbum = ({ onRestart }: PhotoAlbumProps) => {
           {/* Page Content */}
           {currentContent.type === 'memory' ? (
             <div className="grid grid-cols-2 h-full">
-              {/* Left Page */}
-              <div className="page-texture p-4 md:p-8 flex flex-col items-center justify-center border-r border-page-shadow/20">
-                {currentContent.photos?.[0] && (
+              {/* Left Page - 2 photos */}
+              <div className="page-texture p-3 md:p-6 flex flex-col items-center justify-center gap-3 md:gap-4 border-r border-page-shadow/20">
+                {currentContent.photos?.slice(0, 2).map((photo) => (
                   <div
-                    className="photo-tape bg-card p-2 md:p-3 shadow-photo transform transition-transform duration-300 hover:scale-105"
+                    key={photo.id}
+                    className="photo-tape bg-card p-1.5 md:p-2 shadow-photo transform transition-transform duration-300 hover:scale-105"
                     style={{
-                      transform: `rotate(${currentContent.photos[0].rotation}deg)`,
+                      transform: `rotate(${photo.rotation}deg)`,
                     }}
                   >
-                    {/* Photo Placeholder */}
-                    <div className="w-32 h-32 md:w-48 md:h-48 bg-muted flex items-center justify-center rounded-sm">
-                      <span className="text-muted-foreground font-sarabun text-sm md:text-base">
-                        {currentContent.photos[0].placeholder}
+                    <div className="w-24 h-24 md:w-32 md:h-32 bg-muted flex items-center justify-center rounded-sm">
+                      <span className="text-muted-foreground font-sarabun text-xs md:text-sm">
+                        {photo.placeholder}
                       </span>
                     </div>
-                    {/* Caption */}
-                    <p className="font-handwritten text-center text-foreground/80 mt-2 text-lg md:text-xl">
-                      {currentContent.photos[0].caption}
-                    </p>
                   </div>
-                )}
+                ))}
               </div>
 
-              {/* Right Page */}
-              <div className="page-texture p-4 md:p-8 flex flex-col items-center justify-center">
-                {currentContent.photos?.[1] && (
+              {/* Right Page - 2 photos */}
+              <div className="page-texture p-3 md:p-6 flex flex-col items-center justify-center gap-3 md:gap-4">
+                {currentContent.photos?.slice(2, 4).map((photo) => (
                   <div
-                    className="photo-tape bg-card p-2 md:p-3 shadow-photo transform transition-transform duration-300 hover:scale-105"
+                    key={photo.id}
+                    className="photo-tape bg-card p-1.5 md:p-2 shadow-photo transform transition-transform duration-300 hover:scale-105"
                     style={{
-                      transform: `rotate(${currentContent.photos[1].rotation}deg)`,
+                      transform: `rotate(${photo.rotation}deg)`,
                     }}
                   >
-                    {/* Photo Placeholder */}
-                    <div className="w-32 h-32 md:w-48 md:h-48 bg-muted flex items-center justify-center rounded-sm">
-                      <span className="text-muted-foreground font-sarabun text-sm md:text-base">
-                        {currentContent.photos[1].placeholder}
+                    <div className="w-24 h-24 md:w-32 md:h-32 bg-muted flex items-center justify-center rounded-sm">
+                      <span className="text-muted-foreground font-sarabun text-xs md:text-sm">
+                        {photo.placeholder}
                       </span>
                     </div>
-                    {/* Caption */}
-                    <p className="font-handwritten text-center text-foreground/80 mt-2 text-lg md:text-xl">
-                      {currentContent.photos[1].caption}
-                    </p>
                   </div>
-                )}
+                ))}
               </div>
             </div>
           ) : (

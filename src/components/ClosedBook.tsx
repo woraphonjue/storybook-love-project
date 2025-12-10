@@ -85,10 +85,6 @@ const ClosedBook = ({ onOpen }: ClosedBookProps) => {
                 สุขสันต์วันเกิดนะครับ
               </h1>
 
-              {/* Subtitle */}
-              <p className="font-sarabun text-lg md:text-xl text-rose-glow/90 font-light tracking-wide">
-                สมุดเล่มเล็กของเรื่องราวเรา
-              </p>
 
               {/* Decorative Line */}
               <div className="mt-6 w-24 h-0.5 bg-gradient-to-r from-transparent via-rose to-transparent rounded-full" />
