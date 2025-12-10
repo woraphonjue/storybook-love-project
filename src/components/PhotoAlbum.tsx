@@ -143,13 +143,13 @@ const PhotoAlbum = ({ onRestart }: PhotoAlbumProps) => {
                 {currentContent.photos?.slice(0, 2).map((photo) => (
                   <div
                     key={photo.id}
-                    className="photo-tape bg-card p-1.5 md:p-2 shadow-photo transform transition-transform duration-300 hover:scale-105"
+                    className="photo-tape bg-card p-2 md:p-3 shadow-photo transform transition-transform duration-300 hover:scale-105"
                     style={{
                       transform: `rotate(${photo.rotation}deg)`,
                     }}
                   >
-                    <div className="w-24 h-24 md:w-32 md:h-32 bg-muted flex items-center justify-center rounded-sm">
-                      <span className="text-muted-foreground font-sarabun text-xs md:text-sm">
+                    <div className="w-36 h-36 md:w-48 md:h-48 lg:w-56 lg:h-56 bg-muted flex items-center justify-center rounded-sm">
+                      <span className="text-muted-foreground font-sarabun text-sm md:text-base">
                         {photo.placeholder}
                       </span>
                     </div>
@@ -162,13 +162,13 @@ const PhotoAlbum = ({ onRestart }: PhotoAlbumProps) => {
                 {currentContent.photos?.slice(2, 4).map((photo) => (
                   <div
                     key={photo.id}
-                    className="photo-tape bg-card p-1.5 md:p-2 shadow-photo transform transition-transform duration-300 hover:scale-105"
+                    className="photo-tape bg-card p-2 md:p-3 shadow-photo transform transition-transform duration-300 hover:scale-105"
                     style={{
                       transform: `rotate(${photo.rotation}deg)`,
                     }}
                   >
-                    <div className="w-24 h-24 md:w-32 md:h-32 bg-muted flex items-center justify-center rounded-sm">
-                      <span className="text-muted-foreground font-sarabun text-xs md:text-sm">
+                    <div className="w-36 h-36 md:w-48 md:h-48 lg:w-56 lg:h-56 bg-muted flex items-center justify-center rounded-sm">
+                      <span className="text-muted-foreground font-sarabun text-sm md:text-base">
                         {photo.placeholder}
                       </span>
                     </div>
